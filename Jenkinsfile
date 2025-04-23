@@ -20,13 +20,5 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-credential', usernameVariable: 'USERNAME', passwordVariable: 'TOKEN')]) {
-                    sh "docker login -u $USERNAME -p $TOKEN"
-                    sh "docker pull store-${env.SERVICE} || true"
-                }
-            }
-        }
     }
 }
