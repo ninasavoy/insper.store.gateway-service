@@ -24,10 +24,20 @@ spring:
           predicates:
             - Path=/auth/**
 
-        # - id: exchange
-        #   uri: http://exchange:80
-        #   predicates:
-        #     - Path=/exchange/**
+        - id: product
+          uri: http://product:8080
+          predicates:
+            - Path=/product/**
+
+        - id: order
+          uri: http://order:8080
+          predicates:
+            - Path=/order/**
+
+        - id: exchange
+          uri: http://exchange:80
+          predicates:
+            - Path=/exchange/**
 
 logging:
   level:
